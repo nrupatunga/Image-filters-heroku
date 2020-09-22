@@ -15,7 +15,7 @@ from litmodel import LitModel
 smooth_ckpt = './ckpt/L0-smoothing/_ckpt_epoch_79.ckpt'
 style_ckpt = './ckpt/Photographic-Style/epoch=138.ckpt'
 pencil_ckpt = './ckpt/pencil/epoch=138.ckpt'
-gpu = True
+gpu = False
 models = {}
 
 
