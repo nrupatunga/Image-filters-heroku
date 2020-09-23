@@ -15,6 +15,8 @@ from litmodel import LitModel
 smooth_ckpt = './ckpt/L0-smoothing/_ckpt_epoch_79.ckpt'
 style_ckpt = './ckpt/Photographic-Style/epoch=138.ckpt'
 pencil_ckpt = './ckpt/Pencil/epoch=138.ckpt'
+
+# keep it false for Heroku app
 gpu = False
 models = {}
 
