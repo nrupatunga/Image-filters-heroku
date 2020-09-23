@@ -84,6 +84,7 @@ if __name__ == "__main__":
                  inputs=inputs,
                  outputs=outputs,
                  title=title,
+                 verbose=True,
                  allow_flagging=False,
                  examples=sample_images,
                  description=description).launch(share=False)
