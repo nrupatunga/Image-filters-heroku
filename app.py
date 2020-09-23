@@ -14,7 +14,7 @@ from litmodel import LitModel
 
 smooth_ckpt = './ckpt/L0-smoothing/_ckpt_epoch_79.ckpt'
 style_ckpt = './ckpt/Photographic-Style/epoch=138.ckpt'
-pencil_ckpt = './ckpt/pencil/epoch=138.ckpt'
+pencil_ckpt = './ckpt/Pencil/epoch=138.ckpt'
 gpu = False
 models = {}
 
@@ -51,10 +51,10 @@ def get_output(model, img):
     return output
 
 
-def apply_filter(image, mode):
+def apply_filter(image, filter_type):
     """apply filter
     """
-    return get_output(models[mode], image)
+    return get_output(models[filter_type], image)
 
 
 if __name__ == "__main__":
@@ -82,4 +82,4 @@ if __name__ == "__main__":
                  title=title,
                  allow_flagging=False,
                  examples=sample_images,
-                 description=description).launch()
+                 description=description).launch(share=False)
