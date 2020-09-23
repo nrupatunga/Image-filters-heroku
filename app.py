@@ -15,6 +15,7 @@ from litmodel import LitModel
 smooth_ckpt = './ckpt/L0-smoothing/_ckpt_epoch_79.ckpt'
 style_ckpt = './ckpt/Photographic-Style/epoch=138.ckpt'
 pencil_ckpt = './ckpt/Pencil/epoch=138.ckpt'
+tone_ckpt = './ckpt/Multiscale-Tone/epoch=37.ckpt'
 
 # keep it false for Heroku app
 gpu = False
@@ -63,10 +64,12 @@ def apply_filter(image, filter_type):
 
 if __name__ == "__main__":
 
-    filter_keys = ['L0-Smoothing', 'Photographic-Style', 'Pencil']
+    filter_keys = ['L0-Smoothing', 'Photographic-Style', 'Pencil',
+                   'Multiscale-Tone']
     models[filter_keys[0]] = load_model(smooth_ckpt)
     models[filter_keys[1]] = load_model(style_ckpt)
     models[filter_keys[2]] = load_model(pencil_ckpt)
+    models[filter_keys[3]] = load_model(tone_ckpt)
 
     title = 'Fast Image Filters using CNN'
     description = 'Implementation of image filters using CNN'
