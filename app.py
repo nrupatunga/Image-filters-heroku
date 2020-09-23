@@ -15,7 +15,7 @@ from litmodel import LitModel
 smooth_ckpt = './ckpt/L0-smoothing/_ckpt_epoch_79.ckpt'
 style_ckpt = './ckpt/Photographic-Style/epoch=138.ckpt'
 pencil_ckpt = './ckpt/Pencil/epoch=138.ckpt'
-gpu = False
+gpu = True
 models = {}
 
 
@@ -47,6 +47,7 @@ def get_output(model, img):
     output = np.clip(output, 0, 1)
     output = output * 255
     output = output.astype(np.uint8)
+    print('Done')
 
     return output
 
@@ -54,6 +55,7 @@ def get_output(model, img):
 def apply_filter(image, filter_type):
     """apply filter
     """
+    print(f'Applying filter: {filter_type}')
     return get_output(models[filter_type], image)
 
 
